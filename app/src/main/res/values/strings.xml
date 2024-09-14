@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MILA</string>
+    <string name="selamat_datang_di_mila">Selamat Datang di MILA</string>
+    <string name="welcome_description">Chatbot yang dapat membantu anda mengenai masalah janin dalam kandunganmu!!</string>
+    <string name="bot_image">bot_image</string>
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+    <string name="masuk_ke_akun_anda">Akses akunmu untuk chat dengan MILA</string>
+    <string name="email">Email</string>
+    <string name="mila">MILA</string>
+    <string name="masukkan_email">Masukkan email</string>
+    <string name="password">Password</string>
+    <string name="masukkan_password">Masukkan password</string>
+    <string name="daftar_desc">Buat akunmu dan mulai chat dengan MILA</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="masukkan_nama_lengkap">Masukkan nama lengkap</string>
+    <string name="selamat_pagi">Selamat Pagi,</string>
+    <string name="nama_user">Nama user</string>
+    <string name="home_title">Ceritakan masalah kandungan anda!</string>
+    <string name="home_desc">MILA dapat membantu anda untuk memberikan rekomendasi dan saran mengenai kandunganmu!!!</string>
+    <string name="chat_dengan_mila">Chat dengan MILA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="profil">Profil</string>
+    <string name="user_icon">user_icon</string>
+    <string name="chatbot_image">chatbot_image</string>
+    <string name="ketik_pesan">Ketik pesan</string>
+    <string name="button_back">button back</string>
+    <string name="riwayat_chat">Riwayat Chat</string>
+    <string name="sorting_icon">sorting_icon</string>
+    <string name="ic_send">ic_send</string>
+    <string name="profile">Profile</string>
+    <string name="milabig">MILA</string>
+    <string name="desc_splash"><![CDATA[Motherhood & Loving Advice Insight]]></string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+</resources>

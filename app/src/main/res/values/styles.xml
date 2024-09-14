@@ -1,0 +1,6 @@
+<resources>
+    <style name="CustomHintStyle">
+        <item name="android:textSize">@dimen/activity_horizontal_margin</item>
+<!--        <item name="android:textColorHint">@color/edit_text_outline</item>-->
+    </style>
+</resources>

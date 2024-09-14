@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:textColorHint">@color/hint_text</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="Theme.MILA" parent="Base.Theme.MILA" />
+
+<!--    <style name="Theme.MILA.Splash" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="androi">@drawable/ic_info</item>-->
+<!--        <item name="andro"-->
+<!--    </style>-->
+
+
+</resources>

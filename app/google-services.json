@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "659631487359",
+    "project_id": "mila-7eab4",
+    "storage_bucket": "mila-7eab4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659631487359:android:23f8a7efb28b06d3ffc24a",
+        "android_client_info": {
+          "package_name": "com.example.mila"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8hkg5CmpiMkZ9zq532bzNvNIAPaosOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
