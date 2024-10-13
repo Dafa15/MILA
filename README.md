@@ -46,7 +46,7 @@ View your chat history for ongoing support and reference.
 1. Run the following command:
    ```bash
    # Clone this repo
-   git clone https://github.com/Plantopia-Alterra-Academy-Batch-6/flutter-capstone-km-alterra-batch-6.git](https://github.com/Dafa15/MILA.git
+   git clone https://github.com/Dafa15/MILA.git
    
 2. Open the project in Android studio or another android development IDE.
 3. Wait untill Android Studio download all package
