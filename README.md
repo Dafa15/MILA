@@ -1,6 +1,6 @@
 # MILA
 
-<img src= "https://ibb.co.com/HBZYX9X" >
+<img src= "https://i.ibb.co.com/djZ67H7/Mobile-App-Phone-Mockup-Sales-Marketing-Presentation-in-Blue-and-White-Modern-Photocentric-Style.png">
 
 This project belong to MILA group on
 **PKM AMLI 2024**
@@ -23,10 +23,10 @@ Receive real-time health alerts related to your pregnancy.
 View your chat history for ongoing support and reference.
 
 ## 🛠️ Tech Stack
-<img src= "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AKotlin-logo.png&psig=AOvVaw3OMb85b2II2Adz9t4g4WJz&ust=1728896356541000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDS6Pr-iokDFQAAAAAdAAAAABAE" height= 60><img src= "https://www.google.com/url?sa=i&url=https%3A%2F%2Fproandroiddev.com%2Ffirebase-android-series-firestore-17e8951c574e&psig=AOvVaw3btV-qcltro4klR6fX7l8z&ust=1728896404520000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiCiZL_iokDFQAAAAAdAAAAABAf" height= 60 ><img src= "https://www.google.com/url?sa=i&url=https%3A%2F%2Fid.wikipedia.org%2Fwiki%2FBerkas%3AAndroid_Studio_icon_%25282023%2529.svg&psig=AOvVaw0aiml9dUaAqayhb3YNX11C&ust=1728896444886000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICGkKX_iokDFQAAAAAdAAAAABAE" height= 60 ><img src= "https://www.svgrepo.com/show/354202/postman-icon.svg" height= 60 >
+<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1200px-Kotlin_Icon.png" height= 60><img src= "https://smarx.com/posts/2021/01/hello-firestore-adding-live-data-to-your-web-apps/firestore-featured.png" height= 60 ><img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/2048px-Android_Studio_icon_%282023%29.svg.png" height= 60 ><img src= "https://www.svgrepo.com/show/354202/postman-icon.svg" height= 60 >
 
 ## Application Architecture
-<img src= "https://ibb.co.com/c2wjX96" >
+<img src= "https://i.ibb.co.com/fr9sGWk/Mobile-Architecture-drawio.png" >
 
 ## List of Package
 
