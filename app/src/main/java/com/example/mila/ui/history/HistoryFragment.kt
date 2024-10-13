@@ -119,6 +119,7 @@ class HistoryFragment : Fragment() {
             historyAdapter.updateMessages(messages)
             binding.rvHistory.visibility = View.VISIBLE
             if (messages.isNotEmpty()) {
+                binding.emptyItem.visibility = View.GONE
                 binding.rvHistory.smoothScrollToPosition(messages.size - 1)
             }
         }

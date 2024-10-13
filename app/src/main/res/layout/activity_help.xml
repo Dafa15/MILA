@@ -1,0 +1,220 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageButton
+            android:id="@+id/backAppHelp"
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/button_back"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/infoApptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Pusat Bantuan"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/view" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- FAQ Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/white"
+
+                app:cardElevation="6dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/faq_title_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frequently Asked Questions (FAQ)"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="16dp" />
+
+                    <!-- FAQ Item 1 -->
+                    <!-- FAQ Item 1 -->
+
+                    <TextView
+                        android:id="@+id/faq_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bagaimana cara mengajukan pertanyaan kepada chatbot?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:onClick="toggleAnswer" />
+
+                    <TextView
+                        android:id="@+id/faq_answer_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anda dapat mengajukan pertanyaan langsung di chat window aplikasi."
+                        android:visibility="gone"
+                        android:padding="8dp" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ECECEC"
+                        android:elevation="1dp"
+                        android:layout_marginVertical="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/faq_answer_1" />
+
+                    <!-- FAQ Item 2 -->
+                    <TextView
+                        android:id="@+id/faq_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apakah chatbot dapat memberikan diagnosis medis?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:onClick="toggleAnswer" />
+
+                    <TextView
+                        android:id="@+id/faq_answer_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MILA tidak memberikan diagnosis medis. Anda tetap harus berkonsultasi dengan dokter."
+                        android:visibility="gone"
+                        android:padding="8dp" />
+
+                    <!-- Tambahkan item FAQ lain sesuai kebutuhan -->
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Panduan Menggunakan Aplikasi Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/guideline_title_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Panduan Menggunakan Aplikasi"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Langkah 1 -->
+                    <TextView
+                        android:id="@+id/step_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Membuka Aplikasi MILA"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/step_desc_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Untuk memulai, buka aplikasi MILA dan lakukan login menggunakan akun Anda. Setelah login berhasil, Anda akan diarahkan ke halaman utama."
+                        android:padding="8dp" />
+
+                    <!-- Langkah 2 -->
+                    <TextView
+                        android:id="@+id/step_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2. Memulai Konsultasi"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/step_desc_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Di halaman utama, ketuk tombol chat untuk memulai konsultasi dengan chatbot MILA. Anda dapat menanyakan berbagai hal tentang kehamilan."
+                        android:padding="8dp" />
+
+                    <!-- Langkah 3 -->
+                    <TextView
+                        android:id="@+id/step_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3. Melihat Riwayat Percakapan"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/step_desc_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anda dapat melihat riwayat percakapan di halaman chat dengan menggulir ke atas. Riwayat percakapan ini akan disimpan untuk referensi Anda."
+                        android:padding="8dp" />
+
+                    <!-- Tambahkan langkah-langkah lain sesuai kebutuhan -->
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

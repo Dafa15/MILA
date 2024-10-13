@@ -57,32 +57,32 @@ class ChatViewModel(private val preference: UserPreference) : ViewModel() {
             dateTime = getReadableText(Date()),
             dataObject = Date()
         )
+
         // Tambahkan pesan senderMessage ke daftar tanpa mengganti data yang sudah ada
-        val currentMessages =
-            _chatMessages.value.orEmpty().toMutableList() // Salin data yang sudah ada
+        val currentMessages = _chatMessages.value.orEmpty().toMutableList()
         currentMessages.add(senderMessage)
-        _chatMessages.postValue(currentMessages) // Perbarui LiveData dengan data yang sudah diperbarui
+        _chatMessages.postValue(currentMessages)
 
         viewModelScope.launch {
             try {
-                // Hit API
-                val jsonBody = JSONObject().apply {
-                    put("text", text)
-                }
-
-                val requestBody = RequestBody.create(
-                    MediaType.parse("application/json; charset=utf-8"), jsonBody.toString()
-                )
-
+                // Pindahkan ke thread latar belakang (IO thread)
                 val response = withContext(Dispatchers.IO) {
+                    val jsonBody = JSONObject().apply {
+                        put("text", text)
+                    }
+
+                    val requestBody = RequestBody.create(
+                        MediaType.parse("application/json; charset=utf-8"), jsonBody.toString()
+                    )
+
+                    // Jika kamu menggunakan Retrofit dengan suspend function, gunakan await
                     ApiConfig.getApiService().getResponse(requestBody)
                 }
 
-                // Post response ke Firebase Firestore
+                // Setelah mendapatkan respons dari API, update Firestore di main thread
                 val message = hashMapOf(
                     Constant.KEY_SENDER_ID to Constant.KEY_BOT_ID,
-                    Constant.KEY_RECEIVER_ID to preference.getString(Constant.KEY_USER_ID)
-                        .toString(),
+                    Constant.KEY_RECEIVER_ID to preference.getString(Constant.KEY_USER_ID).toString(),
                     Constant.KEY_MESSAGE to response.response,
                     Constant.KEY_TIMESTAMP to Date(),
                     Constant.KEY_TAG to response.tag
@@ -110,6 +110,7 @@ class ChatViewModel(private val preference: UserPreference) : ViewModel() {
             }
         }
     }
+
 
 
     fun listenMessages(date: Date) {
@@ -155,6 +156,7 @@ class ChatViewModel(private val preference: UserPreference) : ViewModel() {
                         dataObject = document.getDate(Constant.KEY_TIMESTAMP),
                         tag = document.getString(Constant.KEY_TAG)
                     )
+
                     messages.add(chatMessage)
                 }
                 // Sort messages by timestamp and post the list to LiveData

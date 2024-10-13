@@ -4,93 +4,194 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingHorizontal="16dp"
     android:paddingVertical="21dp"
-    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="75dp"
         android:contentDescription="@string/user_icon"
         android:src="@drawable/iconamoon_profile_circle_fill"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/greetings"
+    <LinearLayout
+        android:id="@+id/useGreet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_extrabold"
-        android:text="@string/selamat_pagi"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2">
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito"
-        android:text="@string/nama_user"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/greetings" />
+        <TextView
+            android:id="@+id/greetings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/selamat_pagi"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_goneMarginTop="8dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/nunito"
+            android:text="@string/nama_user"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/greetings" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="@string/chatbot_image"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:text="@string/home_title"
-        android:textAlignment="center"
-        android:textColor="@color/blue"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/leaderBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/useGreet">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/home_desc"
-        android:textSize="14sp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <!-- Leaderboard Rank & Username -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/blue"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_tag"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp"
+                            android:text="Topik yang sering ditanyakan"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/leaderBoardArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_forward"
+                            android:padding="8dp"
+                            android:fontFamily="@font/nunito_bold"
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#ECECEC"
+                        android:elevation="1dp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLeaderboardItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonChat"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        android:textColor="@color/white"
-        android:fontFamily="@font/nunito_bold"
-        android:textAllCaps="false"
-        android:paddingEnd="16dp"
-        android:paddingStart="50dp"
-        android:drawableEnd="@drawable/baseline_arrow_forward_24"
-        android:background="@drawable/button_filled"
-        android:text="@string/chat_dengan_mila"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32sp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/chatbot_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leaderBoard"
+            app:srcCompat="@drawable/home" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/home_title"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="23sp"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home_desc"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonChat"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginTop="16sp"
+            android:background="@drawable/button_filled"
+            android:drawableEnd="@drawable/baseline_arrow_forward_24"
+            android:fontFamily="@font/nunito_bold"
+            android:paddingStart="50dp"
+            android:paddingEnd="16dp"
+            android:text="@string/chat_dengan_mila"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

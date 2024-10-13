@@ -41,4 +41,6 @@
     <string name="desc_splash"><![CDATA[Motherhood & Loving Advice Insight]]></string>
     <string name="sign_out">Sign Out</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="tambahkan_foto">Tambahkan foto</string>
+    <string name="icon_edit">icon edit</string>
 </resources>

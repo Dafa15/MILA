@@ -53,7 +53,8 @@ class HistoryViewModel (private val preference: UserPreference) : ViewModel() {
                             message = documentChange.document.getString(Constant.KEY_MESSAGE),
                             dateTime = documentChange.document.getDate(Constant.KEY_TIMESTAMP)
                                 ?.let { dateFormat.format(it) },  // Memformat tanggal
-                            dataObject = documentChange.document.getDate(Constant.KEY_TIMESTAMP)
+                            dataObject = documentChange.document.getDate(Constant.KEY_TIMESTAMP),
+                            tag = documentChange.document.getString(Constant.KEY_TAG)
                         )
 
                         val messageDate = chatMessage.dateTime

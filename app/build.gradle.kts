@@ -67,6 +67,10 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.androidx.core.splashscreen)
     implementation (libs.androidx.recyclerview)
+    implementation (libs.glide.v4142)
+    implementation(libs.lottie)
+    annotationProcessor (libs.compiler)
+
 
 
 }

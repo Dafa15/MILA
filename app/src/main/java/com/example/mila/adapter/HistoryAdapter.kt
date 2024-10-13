@@ -28,6 +28,7 @@ class HistoryAdapter(
         val chatMessage = chatMessages[position]
         holder.binding.textMessage.text = chatMessage.message
         holder.binding.chatDate.text = chatMessage.dateTime
+        holder.binding.tag.text = "#${chatMessage.tag}"
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(chatMessage)
         }

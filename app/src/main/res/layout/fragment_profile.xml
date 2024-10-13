@@ -24,9 +24,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
+        android:layout_marginTop="16dp"
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:contentDescription="@string/user_icon"
         android:src="@drawable/iconamoon_profile_circle_fill"
         app:layout_constraintStart_toStartOf="@+id/milaChat"
@@ -57,17 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appInfo" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ECECEC"
-        android:elevation="1dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelInfo" />
 
     <TextView
         android:id="@+id/aboutApp"
@@ -87,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="App Info"
+        app:layout_goneMarginStart="16sp"
         android:textColor="@color/black"
         android:layout_marginStart="12dp"
         android:textSize="16dp"
@@ -105,51 +96,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutApp" />
 
-    <ImageView
-        android:id="@+id/icModel"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginVertical="16dp"
-        android:src="@drawable/ic_model"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <TextView
-        android:id="@+id/modelInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito"
-        android:text="Model Info"
-        android:layout_marginStart="12dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/icModel"
-        app:layout_constraintStart_toEndOf="@+id/icModel"
-        app:layout_constraintTop_toTopOf="@+id/icModel" />
-
     <TextView
         android:id="@+id/help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito"
         android:layout_marginStart="12dp"
+        android:fontFamily="@font/nunito"
         android:text="Help"
+        android:layout_marginTop="8dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/icHelp"
         app:layout_constraintStart_toEndOf="@+id/icHelp"
-        app:layout_constraintTop_toTopOf="@+id/icHelp" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <ImageView
         android:id="@+id/icHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_help"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_help"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logoutButton"
@@ -173,7 +142,8 @@
         android:id="@+id/editButton"
         android:layout_width="32sp"
         android:layout_height="32sp"
-        android:contentDescription="icon edit"
+        android:background="@color/white"
+        android:contentDescription="@string/icon_edit"
         android:src="@drawable/ic_edit"
         android:layout_marginEnd="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/userName"

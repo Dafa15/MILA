@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mila.ui.chat.ChatViewModel
 import com.example.mila.ui.history.HistoryViewModel
+import com.example.mila.ui.home.HomeViewModel
 import com.example.mila.util.UserPreference
 
 class ChatViewModelFactory(
@@ -17,6 +18,9 @@ class ChatViewModelFactory(
         }else if(modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return HistoryViewModel(userPreference) as T
+        }else if(modelClass.isAssignableFrom(HomeViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return HomeViewModel(userPreference) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

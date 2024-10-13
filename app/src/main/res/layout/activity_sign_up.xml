@@ -64,7 +64,7 @@
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <com.example.mila.ui.costumview.EditText
+        <EditText
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -122,6 +122,41 @@
 
             <com.example.mila.ui.costumview.EditText
                 android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_outline"
+                android:ems="10"
+                android:fontFamily="@font/nunito_medium"
+                android:inputType="textPassword"
+                android:padding="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/passwordCOnfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_medium"
+            android:text="Konfirmasi Password"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordconfirmTi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <EditText
+                android:id="@+id/etPasswordConfirm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_outline"

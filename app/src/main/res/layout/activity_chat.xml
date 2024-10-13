@@ -1,69 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/chat"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.chat.ChatActivity">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/etMessage"
-        android:fitsSystemWindows="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/rv_chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_message"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="12dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrount_text_input"
-            android:hint="@string/ketik_pesan"
-            android:inputType="text"
-            android:paddingHorizontal="16dp"
-            android:textColorHint="@color/light_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:paddingEnd="32dp"
-            android:paddingStart="16dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/buttonSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/ic_send"
-            android:src="@drawable/ic_send"
-            android:layout_marginBottom="4dp"
-            android:background="@color/white"
-            android:layout_gravity="end|center"
-            android:layout_marginEnd="32dp"/>
-    </FrameLayout>
+        layout="@layout/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="64dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etMessage"/>
+        android:layout_weight="1" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconContentDescription="@string/ic_send"
+        app:endIconMode="custom"
+        app:endIconTint="@color/blue"
+        app:endIconDrawable="@drawable/ic_send"
+        app:hintAnimationEnabled="false"
+        app:expandedHintEnabled="false"
+        app:hintEnabled="false">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ketik Pesan"
+            android:layout_marginHorizontal="16dp"
+            android:autofillHints=""
+            android:background="@drawable/backgrount_text_input"
+            android:inputType="text"
+            android:textColorHint="@color/light_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

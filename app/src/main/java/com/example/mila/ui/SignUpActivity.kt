@@ -1,5 +1,6 @@
 package com.example.mila.ui
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,10 +9,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.mila.constant.Constant
 import com.example.mila.databinding.ActivitySignUpBinding
 import com.example.mila.util.UserPreference
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -43,9 +48,12 @@ class SignUpActivity : AppCompatActivity() {
             .add(user)
             .addOnSuccessListener{
                 loading(false)
-                val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
+                lifecycleScope.launch {
+                    showAlertDialogAwait("Sukses", "Berhasil daftar, silakan masuk ke akun anda!")
+                    val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                }
             }
             .addOnFailureListener{exception ->
                 loading(false)
@@ -58,20 +66,30 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun isValidSignUp(): Boolean {
-        if (binding.nameEditText.text?.isEmpty() == true) {
-            showToast("Enter name")
-            return false
-        } else if (binding.emailEditText.text?.isEmpty() == true) {
-            showToast("Enter email")
-            return false
+        val emailPattern = Regex("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}")
+        when {
+            binding.nameEditText.text?.isEmpty() == true -> {
+                showToast("Masukkan nama!")
+                return false
+            }
+            binding.emailEditText.text?.isEmpty() == true -> {
+                showToast("Masukkan email!")
+                return false
+            }
+            !binding.emailEditText.text.toString().matches(emailPattern) -> {
+                showToast("Masukkan email yang benar!")
+                return false
+            }
+            binding.passwordEditText.text?.isEmpty() == true -> {
+                showToast("Masukkan password!")
+                return false
+            }
+            binding.etPasswordConfirm.text?.isEmpty() == true || binding.etPasswordConfirm.text.toString() != binding.passwordEditText.text.toString() -> {
+                showToast("Konfirmasi password tidak sama!")
+                return false
+            }
         }
-         else if (binding.passwordEditText.text?.isEmpty() == true) {
-             showToast("Enter password")
-            return false
-        }
-        else {
-            return true
-        }
+        return true
     }
 
     private  fun setListeners() {
@@ -91,6 +109,23 @@ class SignUpActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private suspend fun showAlertDialogAwait(title: String, subtitle: String) {
+        suspendCancellableCoroutine<Unit> { continuation ->
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(title)
+            builder.setMessage(subtitle)
+            builder.setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+                continuation.resume(Unit)
+            }
+            val dialog = builder.create()
+            dialog.setOnCancelListener {
+                continuation.resume(Unit)  // Resume when the dialog is canceled
+            }
+            dialog.show()
         }
     }
 }

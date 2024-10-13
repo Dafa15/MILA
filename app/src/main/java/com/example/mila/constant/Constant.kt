@@ -6,6 +6,7 @@ class Constant {
         const val KEY_NAME = "nama"
         const val KEY_EMAIL = "email"
         const val KEY_PASSWORD = "password"
+        const val KEY_IMAGE = "image"
         const val KEY_IS_SIGNED_IN = "isSignedIn"
         const val KEY_USER_ID = "userId"
         const val KEY_BOT_ID = "botId"
