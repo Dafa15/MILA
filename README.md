@@ -22,6 +22,9 @@ Receive real-time health alerts related to your pregnancy.
 ### 📊 Chat History
 View your chat history for ongoing support and reference.
 
+### 🏆 Leaderboard of Most Asked Topics
+Explore a leaderboard showcasing the most frequently your asked topics.
+
 ## 🛠️ Tech Stack
 <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1200px-Kotlin_Icon.png" height= 60><img src= "https://smarx.com/posts/2021/01/hello-firestore-adding-live-data-to-your-web-apps/firestore-featured.png" height= 60 ><img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/2048px-Android_Studio_icon_%282023%29.svg.png" height= 60 ><img src= "https://www.svgrepo.com/show/354202/postman-icon.svg" height= 60 >
 
