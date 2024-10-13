@@ -1,6 +1,6 @@
 # MILA
 
-<img src= "https://i.ibb.co.com/djZ67H7/Mobile-App-Phone-Mockup-Sales-Marketing-Presentation-in-Blue-and-White-Modern-Photocentric-Style.png">
+![Mobile App Phone Mockup Sales Marketing Presentation in Blue and White Modern Photocentric Style](https://github.com/user-attachments/assets/17462671-8e41-4d04-81e0-025cc71dbc78)
 
 This project belong to MILA group on
 **PKM AMLI 2024**
