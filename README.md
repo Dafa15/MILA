@@ -1,6 +1,6 @@
-![image](https://github.com/user-attachments/assets/3a38c36c-b25e-4895-a13f-c30d2c396310)# Plantopia
+# MILA
 
-<img src= "https://ibb.co.com/m4n1pHB" >
+<img src= "https://ibb.co.com/HBZYX9X" >
 
 This project belong to MILA group on
 **PKM AMLI 2024**
